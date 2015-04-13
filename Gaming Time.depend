@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1428479785 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\game.cpp
+1428922292 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\game.cpp
 	"game.h"
 	"player.h"
 	"LTexture.h"
 	"Tile.h"
+	"iostream"
 	<string>
 
 1428389459 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\ltexture.h
@@ -17,7 +18,7 @@
 1427943116 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\lanime.h
 	"LTexture.h"
 
-1428391818 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\game.h
+1428524025 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\game.h
 	"Tile.h"
 	<SDL.h>
 	<SDL_image.h>
@@ -25,14 +26,14 @@
 	<string>
 	<fstream>
 
-1428459989 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\tile.h
+1428921380 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\tile.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
 	<string>
 	<fstream>
 
-1428479465 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\player.h
+1428842699 c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\include\player.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -40,10 +41,10 @@
 	<fstream>
 	"Tile.h"
 
-1428392697 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\ltexture.cpp
+1428843125 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\ltexture.cpp
 	"LTexture.h"
 
-1428480035 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\player.cpp
+1428842722 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\player.cpp
 	"player.h"
 	"LTexture.h"
 	"game.h"
@@ -51,7 +52,7 @@
 	<iostream>
 	<unistd.h>
 
-1428409159 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\tile.cpp
+1428524531 source:c:\users\srilasalle.srilasalle-pc\desktop\c++ gaming project\gaming time\src\tile.cpp
 	"Tile.h"
 	"LTexture.h"
 

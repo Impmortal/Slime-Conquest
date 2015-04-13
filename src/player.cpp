@@ -5,13 +5,15 @@
 #include <iostream>
 #include <unistd.h>
 
-extern LTexture gDotTexture;
+extern const int PLAYER_WALKING_ANIMATION_FRAMES;
+
+extern LTexture gPlayerTexture;
 game gTileCollsion;
 
 Player::Player()
 {
     //Initialize the collision box
-    mBox.x = 300;
+    mBox.x = 0;
     mBox.y = 0;
 	mBox.w = PLAYER_WIDTH;
 	mBox.h = PLAYER_HEIGHT;
@@ -20,9 +22,12 @@ Player::Player()
     mVelX = 0;
     mVelY = 0;
 
-    startTime = 0;
+    Keyup = 0;
 
-    noKeyup = 1;
+    onGround = 0;
+
+    respwan_x = 0;
+    respwan_y = 0;
 
 }
 
@@ -34,7 +39,7 @@ void Player::handleEvent( SDL_Event& e )
         //Adjust the velocity
         switch( e.key.keysym.sym )
         {
-            case SDLK_UP: mVelY -= PLAYER_VEL; noKeyup = 0; break;
+            case SDLK_UP: mVelY -= PLAYER_VEL; Keyup = 1; break;
             case SDLK_DOWN: mVelY += PLAYER_VEL; break;
             case SDLK_LEFT: mVelX -= PLAYER_VEL; break;
             case SDLK_RIGHT: mVelX += PLAYER_VEL; break;
@@ -46,7 +51,7 @@ void Player::handleEvent( SDL_Event& e )
         //Adjust the velocity
         switch( e.key.keysym.sym )
         {
-            case SDLK_UP: mVelY += PLAYER_VEL; noKeyup = 1; break;
+            case SDLK_UP: mVelY += PLAYER_VEL; Keyup = 0; break;
             case SDLK_DOWN: mVelY -= PLAYER_VEL; break;
             case SDLK_LEFT: mVelX += PLAYER_VEL; break;
             case SDLK_RIGHT: mVelX -= PLAYER_VEL; break;
@@ -75,21 +80,24 @@ void Player::move( Tile *tiles[] )
         //move back
         mBox.y -= mVelY;
     }
+
+    if ( !gTileCollsion.touchesWall( mBox, tiles ) )
+        gravity( tiles );
 }
 
 void Player::gravity( Tile *tiles[] )
 {
-    //While character should go down more
-    if( ( !gTileCollsion.touchesWall( mBox, tiles )) && ( noKeyup == 1 ) )
+    //if character should go down more
+    if( ( !gTileCollsion.touchesWall( mBox, tiles )) && ( !Keyup ) )
     {
         //move down
-        mBox.y += 10;
+        mBox.y += PLAYER_VEL;
 
         //If the character went too far up or down or touched a wall
         if( ( mBox.y < 0 ) || ( mBox.y + PLAYER_HEIGHT > LEVEL_HEIGHT ) || gTileCollsion.touchesWall( mBox, tiles ) )
         {
             //move back
-            mBox.y -= 10;
+            mBox.y -= PLAYER_VEL;
         }
     }
 }
@@ -119,8 +127,8 @@ void Player::setCamera( SDL_Rect& camera )
 	}
 }
 
-void Player::render( SDL_Rect& camera , SDL_Renderer* gRenderer )
+void Player::render( SDL_Rect& camera , SDL_Renderer* gRenderer, SDL_Rect* clip )
 {
     //Show the dot
-	gDotTexture.render( mBox.x - camera.x, mBox.y - camera.y , gRenderer );
+	gPlayerTexture.render( mBox.x - camera.x, mBox.y - camera.y - 9, gRenderer, clip );
 }

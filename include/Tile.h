@@ -8,28 +8,52 @@
 #include <fstream>
 
 //Tile constants
-const int TILE_WIDTH = 80;
-const int TILE_HEIGHT = 80;
+const int TILE_WIDTH = 64;
+const int TILE_HEIGHT = 64;
 const int TOTAL_TILES = 192;
-const int TOTAL_TILE_SPRITES = 12;
+const int TOTAL_TILE_SPRITES = 33;
 
 //The different tile sprites
-const int TILE_RED = 0;
-const int TILE_GREEN = 1;
-const int TILE_BLUE = 2;
-const int TILE_CENTER = 3;
-const int TILE_TOP = 4;
-const int TILE_TOPRIGHT = 5;
-const int TILE_RIGHT = 6;
-const int TILE_BOTTOMRIGHT = 7;
-const int TILE_BOTTOM = 8;
-const int TILE_BOTTOMLEFT = 9;
-const int TILE_LEFT = 10;
-const int TILE_TOPLEFT = 11;
+const int TILE_TRANSPAENT = 0;
+const int TILE_TREE_LOWEST = 1;
+const int TILE_TREE_LOW = 2;
+const int TILE_TREE_MID = 3;
+const int TILE_TREE_HIGH = 4;
+const int TILE_LEAF_LEFT_LOWEST = 5;
+const int TILE_LEAF_LEFT_LOW = 6;
+const int TILE_LEAF_LEFT_HIGH = 7;
+const int TILE_LEAF_LEFT_HIGHEST = 8;
+const int TILE_LEAF_RIGHT_LOWEST = 9;
+const int TILE_LEAF_RIGHT_LOW = 10;
+const int TILE_LEAF_RIGHT_HIGH = 11;
+const int TILE_LEAF_RIGHT_HIGHEST = 12;
+const int TILE_LEAF_MID_HIGH = 13;
+const int TILE_LEAF_MID_HIGHEST = 14;
+const int TILE_CEMETARY = 15;
+const int TILE_ONE_SMALLTREE = 16;
+const int TILE_TWO_SMALLTREE = 17;
+const int TILE_ROCK_LEFT = 18;
+const int TILE_ROCK_RIGHT = 19;
+const int TILE_ROCK_HIGH = 20;
+
+//Collision tiles
+const int TILE_GROUND_TOPLEFT = 21;
+const int TILE_GROUND_TOPMID = 22;
+const int TILE_GROUND_TOPRIGHT = 23;
+const int TILE_GROUND_LEFT = 24;
+const int TILE_GROUND_RIGHT = 25;
+const int TILE_NEARHIGH_LEFT = 26;
+const int TILE_NEARHIGH_RIGHT = 27;
+const int TILE_HIGHGROUND_TOPLEFT = 28;
+const int TILE_HIGHGROUND_TOPMID = 29;
+const int TILE_HIGHGROUND_TOPRIGHT = 30;
+const int TILE_HIGHGROUND_LEFT = 31;
+const int TILE_HIGHGROUND_RIGHT = 32;
+
 
 //The dimensions of the level
-const int LEVEL_WIDTH = 1280;
-const int LEVEL_HEIGHT = 960;
+const int LEVEL_WIDTH = 1024;
+const int LEVEL_HEIGHT = 728;
 
 //The tile
 class Tile

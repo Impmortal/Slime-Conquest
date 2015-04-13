@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+
+*.depend
+Gaming Time.depend
+*.map

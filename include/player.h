@@ -12,11 +12,11 @@ class Player
 {
     public:
 		//The dimensions of the player
-		static const int PLAYER_WIDTH = 20;
-		static const int PLAYER_HEIGHT = 20;
+		static const int PLAYER_WIDTH = 61;
+		static const int PLAYER_HEIGHT = 42;
 
 		//Maximum axis velocity of the player
-		static const int PLAYER_VEL = 10;
+		static const int PLAYER_VEL = 6;
 
 		//Initializes the variables
 		Player();
@@ -34,7 +34,7 @@ class Player
 		void setCamera( SDL_Rect& camera );
 
 		//Shows the player on the screen
-		void render( SDL_Rect& camera , SDL_Renderer* gRenderer );
+		void render( SDL_Rect& camera , SDL_Renderer* gRenderer, SDL_Rect* );
 
     private:
 		//Collision box of the player
@@ -45,6 +45,11 @@ class Player
 
 		int startTime;
 
-		int noKeyup;
+		int Keyup;
+
+		int onGround;
+
+		int respwan_x;
+		int respwan_y;
 };
 #endif // PLAYER_H
