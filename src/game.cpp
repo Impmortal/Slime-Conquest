@@ -187,7 +187,7 @@ bool setTiles( Tile* tiles[] )
     int x = 0, y = 0;
 
     //Open the map
-    std::ifstream map( "image/lazy.map" );
+    std::ifstream map( "image/STAGE1.map" );
 
     //If the map couldn't be loaded
     if( map == NULL )
