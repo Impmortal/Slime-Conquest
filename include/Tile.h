@@ -10,7 +10,7 @@
 //Tile constants
 const int TILE_WIDTH = 64;
 const int TILE_HEIGHT = 64;
-const int TOTAL_TILES = 192;
+const int TOTAL_TILES = 2020;
 const int TOTAL_TILE_SPRITES = 33;
 
 //The different tile sprites
@@ -52,8 +52,8 @@ const int TILE_HIGHGROUND_RIGHT = 32;
 
 
 //The dimensions of the level
-const int LEVEL_WIDTH = 1024;
-const int LEVEL_HEIGHT = 728;
+const int LEVEL_WIDTH = 12928;
+const int LEVEL_HEIGHT = 600;
 
 //The tile
 class Tile
