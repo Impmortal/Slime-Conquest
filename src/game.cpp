@@ -187,7 +187,7 @@ bool setTiles( Tile* tiles[] )
     int x = 0, y = 0;
 
     //Open the map
-    std::ifstream map( "image/lazy.map" );
+    std::ifstream map( "image/complete.map" );
 
     //If the map couldn't be loaded
     if( map == NULL )
@@ -471,7 +471,7 @@ bool loadMedia( Tile* tiles[], SDL_Renderer* gRenderer )
 	}
 
 	//Load tile texture
-	if( !gTileTexture.loadFromFile( "image/tilemap1.png" , gRenderer ) )
+	if( !gTileTexture.loadFromFile( "image/TILE PNG2.png" , gRenderer ) )
 	{
 		printf( "Failed to load tile set texture!\n" );
 		success = false;
